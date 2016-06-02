@@ -1,0 +1,12 @@
+/Application/Admin/Conf/config.php
+/Application/Home/Conf/config.php
+/Application/Common/Conf/config.php
+/upload/
+/Application/Runtime/
+/nbproject/
+/.idea/
+/.project
+/test.php
+/token/
+/t.txt
+/index.php
