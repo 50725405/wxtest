@@ -1,4 +1,4 @@
 /bootstrap/compiled.php
 .env
 .idea
-config/wechat.php
+/config/wechat.php

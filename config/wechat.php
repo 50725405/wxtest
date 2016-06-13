@@ -21,6 +21,7 @@ return [
     'token'   => env('WECHAT_TOKEN', 'weixin'),          // Token
     'aes_key' => env('WECHAT_AES_KEY', '2Pfzfggvbo7IBk0zwcZnmTeT2Cd8Oy6QYK2eCP700rB'),  // EncodingAESKey
 
+
     /**
      * 日志配置
      *
