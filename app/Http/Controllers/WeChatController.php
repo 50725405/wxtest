@@ -20,7 +20,17 @@ class WeChatController extends Controller
 
         $wechat = app('wechat');
         $wechat->server->setMessageHandler(function($message){
-            return "欢迎关注 overtrue！";
+            if ($message->MsgType == 'event') {
+                switch ($message->Event) {
+                    case 'subscribe':
+                        return '欢迎关注!';
+                        break;
+
+                    default:
+                        # code...
+                        break;
+                }
+            }
         });
 
         Log::info('return response.');
