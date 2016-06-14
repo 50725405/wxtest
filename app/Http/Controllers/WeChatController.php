@@ -37,4 +37,9 @@ class WeChatController extends Controller
 
         return $wechat->server->serve();
     }
+
+    public function menus(){
+        $wechat = app('wechat');
+        dd($wechat->menu->all());
+    }
 }
