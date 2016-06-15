@@ -30,7 +30,10 @@ class WeChatController extends Controller
                         # code...
                         break;
                 }
+            }elseif($message->MsgType == 'voice') {
+                return "不好意思，小探不是AlphaGo，听不懂呢！";
             }
+            return "欢迎来到最有逼格的民宿文化社群！\n\n";
         });
 
         Log::info('return response.');
