@@ -24,7 +24,7 @@ class WeChatController extends Controller
             if ($message->MsgType == 'event') {
                 switch ($message->Event) {
                     case 'subscribe':
-                        return $this->handleEvent($message);
+                        //return $this->handleEvent($message);
                         break;
 
                     default:
@@ -32,8 +32,8 @@ class WeChatController extends Controller
                         break;
                 }
             }elseif($message->MsgType == 'voice') {
-                $str="不好意思，小探不是AlphaGo，听不懂呢！";
-                return  new Text(['content'=>$str]);
+                //$str="不好意思，小探不是AlphaGo，听不懂呢！";
+                //return  new Text(['content'=>$str]);
             }
 
         });
