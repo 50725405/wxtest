@@ -61,7 +61,7 @@ class WeChatController extends Controller
                     'title'=>'反馈村夫',
                     'description'=>'您的意见是我们前进的动力。',
                     'image'=>asset('img/feedback/shakehand.jpg'),
-                    'url'=>action('WechatController@menus', ['wxId'=>$wxId])//url('/feedback',['wxId'=>$wxId]),
+                    'url'=>action('WeChatController@menus', ['wxId'=>$wxId])//url('/feedback',['wxId'=>$wxId]),
                 ];
                 break;
             case "unsubscribe": //取消关注事件
