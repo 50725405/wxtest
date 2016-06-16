@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use EasyWeChat\Message\Text;
+use EasyWeChat\Message\News;
 use Log;
 class WeChatController extends Controller
 {
@@ -24,7 +25,7 @@ class WeChatController extends Controller
             if ($message->MsgType == 'event') {
                 switch ($message->Event) {
                     case 'subscribe':
-                        //return $this->handleEvent($message);
+                        return $this->handleEvent($message);
                         break;
 
                     default:
@@ -55,7 +56,13 @@ class WeChatController extends Controller
         $content = '';
         switch ($obj->Event) {
             case "subscribe":   //关注事件
-                $content = $wxId."请注册，注册后即可快速查询水电费\n<a href='".action('WeChatController@menus')."'>点击这里，立即注册</a>\n";
+                //$content = $wxId."请注册，注册后即可快速查询水电费\n<a href='".action('WeChatController@menus')."'>点击这里，立即注册</a>\n";
+                $content = [
+                    'title'=>'反馈村夫',
+                    'description'=>'您的意见是我们前进的动力。',
+                    'image'=>asset('img/feedback/shakehand.jpg'),
+                    'url'=>action('WechatController@menus', ['wxId'=>$wxId])//url('/feedback',['wxId'=>$wxId]),
+                ];
                 break;
             case "unsubscribe": //取消关注事件
                 $content = "";
